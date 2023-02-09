@@ -47,7 +47,7 @@ int	main(int ac, char **argv)
 	if (get_map_width(&game, argv) == 1)
 	{
 		write(1, "Error\nREPLACE", 34);
-		close_window(game);
+		close_window(&game);
 	}
 
 }
