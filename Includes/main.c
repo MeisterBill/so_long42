@@ -46,8 +46,12 @@ int	main(int ac, char **argv)
 	check_argv(&game, ac, argv);
 	if (get_map_width(&game, argv) == 1)
 	{
-		write(1, "Error\nREPLACE", 34);
+		write(1, "Error\nMap does not follow mapping rules", 40);
 		close_window(&game);
 	}
-
+	if (get_map_height(&game, argv) == 1)
+	{
+		write(1, "Error\nMap does not follow mapping rules", 40);
+		close_window(&game);
+	}
 }
