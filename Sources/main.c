@@ -61,5 +61,7 @@ int	main(int ac, char **argv)
 	}
 	game.item_count = 0;
 	get_item_number(&game);
-
+	if (!check_map(&game))
+		close_window(&game);
+	init_game(&game, argv);
 }

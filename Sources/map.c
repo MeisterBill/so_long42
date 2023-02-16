@@ -60,7 +60,7 @@ int	load_map(t_game *game, char *argv1)
 		game->map_data[i] = get_next_line(fd);
 		i++;
 	}
-	game->map_data = NULL;
+	game->map_data[i] = NULL;
 	close(fd);
 	return (0);
 }
