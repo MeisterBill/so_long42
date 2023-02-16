@@ -46,12 +46,20 @@ int	main(int ac, char **argv)
 	check_argv(&game, ac, argv);
 	if (get_map_width(&game, argv) == 1)
 	{
-		write(1, "Error\nMap does not follow mapping rules", 40);
+		write(1, "Error\nGNL failed", 17);
 		close_window(&game);
 	}
 	if (get_map_height(&game, argv) == 1)
 	{
-		write(1, "Error\nMap does not follow mapping rules", 40);
+		write(1, "Error\nGNL failed", 17);
 		close_window(&game);
 	}
+	if (load_map(&game, argv[1]) == 1)
+	{
+		write(1, "Error\ncalloc failed", 20);
+		close_window(&game);
+	}
+	game.item_count = 0;
+	get_item_number(&game);
+
 }
