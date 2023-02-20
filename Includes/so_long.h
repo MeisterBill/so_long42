@@ -33,6 +33,7 @@ typedef	struct s_game
 	int		img_x;
 	int		img_y;
 	int		count;
+	int		coins;
 	char	*file;
 }				t_game;
 

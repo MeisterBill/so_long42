@@ -1,6 +1,24 @@
 
 #include "so_long.h"
 
+void init_game(t_game *game, char **argv)
+{
+	game->file = argv[1];
+	game->item_player = 0;
+	game->moves_count = 0;
+	get_player_position(game);
+	game->coins = count_coins(game->map_data);
+	check_valid_path(game);
+	game->mlx = mlx_init();
+	game->mlx_win = mlx_new_window(game->mlx, game->map_width * SPRITE,
+																game->map_height * SPRITE, "so_long");
+	load_img(game);
+	display_map(game);
+	mlx_key_hook(game->mlx_win, key_hook, game);
+	mlx_hook(game->mlx_win, 17, 1L << 0, close_window, game);
+	mlx_loop(game->mlx);
+}
+
 int	check_extension(char **argv)
 {
 	int	checker;
@@ -63,5 +81,5 @@ int	main(int ac, char **argv)
 	get_item_number(&game);
 	if (!check_map(&game))
 		close_window(&game);
-	init_game(&game, argv);
+	init_run_game(&game, argv);
 }
