@@ -84,3 +84,31 @@ void	get_item_number(t_game *game)
 		j = 0;
 	}
 }
+
+void display_map(t_game *game)
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	while (game->map_data[i])
+	{
+		while (game->map_data[i][j])
+		{
+			if (game->map_data[i][j] == '1')
+				put_img(game, SPRITE * j, SPRITE * i, game->img_wall);
+			else if (game->map_data[i][j] == '0')
+				put_img(game, SPRITE * j, SPRITE * i, game->img_floor);
+			else if (game->map_data[i][j] == 'P')
+				put_img(game, SPRITE * j, SPRITE * i, game->img_player);
+			else if (game->map_data[i][j] == 'C')
+				put_img(game, SPRITE * j, SPRITE * i, game->img_item);
+			else if (game->map_data[i][j] == 'E')
+				put_img(game, SPRITE * j, SPRITE * i, game->img_exit);
+			j++;
+		}
+		j = 0;
+		i++;
+	}
+}

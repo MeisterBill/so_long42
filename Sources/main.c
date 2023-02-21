@@ -1,7 +1,7 @@
 
 #include "so_long.h"
 
-void init_game(t_game *game, char **argv)
+void init_run_game(t_game *game, char **argv)
 {
 	game->file = argv[1];
 	game->item_player = 0;

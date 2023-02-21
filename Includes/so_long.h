@@ -37,4 +37,24 @@ typedef	struct s_game
 	char	*file;
 }				t_game;
 
+void init_run_game(t_game *game, char **argv);
+int check_argv(t_game *game, int argc, char **argv);
+void put_img(t_game *game, int x, int y, void *img);
+void load_img(t_game *game);
+int get_map_height(t_game *game, char **argv);
+int get_map_width(t_game *game, char **argv);
+int load_map(t_game *game, char *argv);
+void display_map(t_game *game);
+void get_player_position(t_game *game);
+int key_hook(int key, t_game *game);
+void key_process(int key, t_game *game);
+void move(t_game *game, int move_x, int move_y);
+void get_item_number(t_game *game);
+int check_if_all_collected(t_game *game);
+int check_map(t_game *game);
+int check_map_borders(t_game *game);
+int close_window(t_game *game);
+int count_coins(char **map);
+void check_valid_path(t_game *game);
+
 #endif
