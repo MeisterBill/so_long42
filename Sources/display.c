@@ -9,13 +9,13 @@ void put_img(t_game *game, int x, int y, void *img)
 void load_img(t_game *game)
 {
 	game->img_player = mlx_xpm_file_to_image(game->mlx,
-																					"./includes/sprites/owl.xpm", &game->img_x, &game->img_y);
+																					"./includes/sprites/player.xpm", &game->img_x, &game->img_y);
 	game->img_wall = mlx_xpm_file_to_image(game->mlx,
 																				"./includes/sprites/wall.xpm", &game->img_x, &game->img_y);
 	game->img_floor = mlx_xpm_file_to_image(game->mlx,
-																					"./includes/sprites/grass.xpm", &game->img_x, &game->img_y);
+																					"./includes/sprites/background.xpm", &game->img_x, &game->img_y);
 	game->img_item = mlx_xpm_file_to_image(game->mlx,
-																				"./includes/sprites/wood_stick.xpm", &game->img_x, &game->img_y);
+																				"./includes/sprites/collectable.xpm", &game->img_x, &game->img_y);
 	game->img_exit = mlx_xpm_file_to_image(game->mlx,
-																				"./includes/sprites/exit_empty.xpm", &game->img_x, &game->img_y);
+																				"./includes/sprites/exit.xpm", &game->img_x, &game->img_y);
 }
