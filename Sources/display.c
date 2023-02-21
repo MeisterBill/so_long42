@@ -1,5 +1,5 @@
 
-#include "so_long.h"
+#include "../Includes/so_long.h"
 
 void put_img(t_game *game, int x, int y, void *img)
 {

@@ -1,7 +1,7 @@
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# define SPRITE 32
+# define SPRITE 64
 # define UP			13
 # define DOWN		1
 # define LEFT		0
@@ -11,7 +11,8 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <fcntl.h>
-# include "mlx/mlx.h"
+# include "../mlx/mlx.h"
+# include "../libft/libft.h"
 
 typedef	struct s_game
 {

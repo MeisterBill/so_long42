@@ -1,5 +1,5 @@
 
-#include "so_long.h"
+#include "../Includes/so_long.h"
 
 void get_player_position(t_game *game)
 {
@@ -28,7 +28,7 @@ void move_exit(t_game *game, char next_pos)
 {
 	if (next_pos == 'E')
 	{
-		if (check_item(game) == 1)
+		if (check_if_all_collected(game) == 1)
 		{
 			game->moves_count++;
 			ft_printf("Well done, is %i moves the best you can do?\n",

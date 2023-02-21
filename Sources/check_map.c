@@ -1,5 +1,5 @@
 
-#include "so_long.h"
+#include "../Includes/so_long.h"
 
 int check_if_all_collected(t_game *game)
 {

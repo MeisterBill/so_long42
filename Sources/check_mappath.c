@@ -1,5 +1,5 @@
 
-#include "so_long.h"
+#include "../Includes/so_long.h"
 
 static void free_map(char **map)
 {

@@ -1,5 +1,5 @@
 
-#include "so_long.h"
+#include "../Includes/so_long.h"
 
 void init_run_game(t_game *game, char **argv)
 {
@@ -35,7 +35,7 @@ int	check_extension(char **argv)
 	return (checker);
 }
 
-void	close_window(t_game *game)
+int	close_window(t_game *game)
 {
 	(void)game;
 	exit(0);

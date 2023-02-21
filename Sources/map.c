@@ -1,5 +1,5 @@
 
-#include "so_long.h"
+#include "../Includes/so_long.h"
 
 int	get_map_height(t_game *game, char **argv)
 {
