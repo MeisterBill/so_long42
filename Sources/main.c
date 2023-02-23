@@ -6,7 +6,7 @@
 /*   By: artvan-d <artvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 14:07:06 by artvan-d          #+#    #+#             */
-/*   Updated: 2023/02/23 14:07:34 by artvan-d         ###   ########.fr       */
+/*   Updated: 2023/02/23 16:00:15 by artvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,18 @@ int	check_extension(char **argv)
 
 int	close_window(t_game *game)
 {
-	(void)game;
+	int	i;
+
+	i = 0;
+	if (game->map_data)
+	{
+		while (game->map_data[i])
+		{
+			free(game->map_data[i]);
+			i++;
+		}
+		free(game->map_data);
+	}
 	exit(0);
 }
 
@@ -56,12 +67,12 @@ int	check_argv(t_game *game, int ac, char **argv)
 {
 	if (ac != 2)
 	{
-		write(1, "Error\nUse <./so_long maps/mapx.ber>", 36);
+		write(1, "Error\nUse <./so_long maps/mapx.ber>\n", 37);
 		close_window(game);
 	}
 	if (check_extension(argv) == 1)
 	{
-		write(1, "Error\nMap has to be a <.ber> file", 34);
+		write(1, "Error\nMap has to be a <.ber> file.\n", 36);
 		close_window(game);
 	}
 	return (0);
@@ -75,17 +86,17 @@ int	main(int ac, char **argv)
 	check_argv(&game, ac, argv);
 	if (get_map_width(&game, argv) == 1)
 	{
-		write(1, "Error\nGNL failed", 17);
+		write(1, "Error\nPath to map incorrect or map empty.\n", 43);
 		close_window(&game);
 	}
 	if (get_map_height(&game, argv) == 1)
 	{
-		write(1, "Error\nGNL failed", 17);
+		write(1, "Error\nPath to map incorrect or map empty.\n", 43);
 		close_window(&game);
 	}
 	if (load_map(&game, argv[1]) == 1)
 	{
-		write(1, "Error\ncalloc failed", 20);
+		write(1, "Error\nCalloc failed.\n", 22);
 		close_window(&game);
 	}
 	game.item_count = 0;

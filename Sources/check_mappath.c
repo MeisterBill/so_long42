@@ -6,7 +6,7 @@
 /*   By: artvan-d <artvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 14:00:59 by artvan-d          #+#    #+#             */
-/*   Updated: 2023/02/23 14:04:50 by artvan-d         ###   ########.fr       */
+/*   Updated: 2023/02/23 15:53:50 by artvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	check_valid_path(t_game *game)
 	}
 	if (game->count != game->coins + 2)
 	{
-		write(1, "Error\nMap has no valid path.", 29);
+		write(1, "Error\nMap has no valid path.\n", 30);
 		close_window(game);
 	}
 	free_map(game->map_data);

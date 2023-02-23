@@ -6,7 +6,7 @@
 /*   By: artvan-d <artvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 14:08:08 by artvan-d          #+#    #+#             */
-/*   Updated: 2023/02/23 14:11:26 by artvan-d         ###   ########.fr       */
+/*   Updated: 2023/02/23 15:27:07 by artvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,19 +51,30 @@ void	move_exit(t_game *game, char next_pos)
 
 void	move(t_game *game, int move_x, int move_y)
 {
-	char	next_pos;
+	char		next_pos;
+	static char	last_pos;
 
 	next_pos = game->map_data[game->player_y + move_y][game->player_x + move_x];
-	if (next_pos == '0' || next_pos == 'C' || next_pos == 'P')
+	last_pos = game->map_data[game->player_y][game->player_x];
+	if (next_pos == '0' || next_pos == 'C' || next_pos == 'P' \
+	|| next_pos == 'E')
 	{
+		if (last_pos == 'E')
+		{
+			put_img(game, SPRITE * game->player_x, SPRITE * game->player_y,
+				game->img_exit);
+		}
+		if (last_pos != 'E')
+		{
+			put_img(game, SPRITE * game->player_x, SPRITE * game->player_y,
+				game->img_floor);
+		}
 		if (next_pos == 'C')
 		{
 			game->item_player++;
 			game->map_data[game->player_y + move_y][game->player_x + move_x] \
 			= '0';
 		}
-		put_img(game, SPRITE * game->player_x, SPRITE * game->player_y,
-			game->img_floor);
 		game->player_x += move_x;
 		game->player_y += move_y;
 		put_img(game, SPRITE * game->player_x + move_x,
