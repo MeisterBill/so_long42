@@ -6,7 +6,7 @@
 #    By: artvan-d <artvan-d@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/16 14:31:23 by artvan-d          #+#    #+#              #
-#    Updated: 2022/12/15 15:02:41 by artvan-d         ###   ########.fr        #
+#    Updated: 2023/02/23 14:13:54 by artvan-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,9 +28,6 @@ CFILES = \
 		ft_atoi.c\
 		ft_calloc.c\
 		ft_strjoin.c\
-		ft_count_c.c\
-		ft_count_lines.c\
-		ft_line_length.c\
 		ft_strchr.c\
 		ft_strlen.c\
 		ft_strnstr.c\
