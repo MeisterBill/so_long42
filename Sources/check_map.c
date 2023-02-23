@@ -6,7 +6,7 @@
 /*   By: artvan-d <artvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 14:00:24 by artvan-d          #+#    #+#             */
-/*   Updated: 2023/02/23 15:44:38 by artvan-d         ###   ########.fr       */
+/*   Updated: 2023/02/23 16:19:18 by artvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ int	check_map(t_game *game)
 	}
 	if (!check_map_borders(game))
 	{
-		write(1, "Error\nMap has to be surrounded with walls.\n", 44);
+		write(1, "Error\nMap has to be surrounded by walls.\n", 42);
 		return (0);
 	}
 	if (!check_map_elements(game))
