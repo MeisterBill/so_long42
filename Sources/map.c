@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: artvan-d <artvan-d@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/23 14:07:49 by artvan-d          #+#    #+#             */
+/*   Updated: 2023/02/23 14:08:03 by artvan-d         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../Includes/so_long.h"
 
@@ -85,10 +96,10 @@ void	get_item_number(t_game *game)
 	}
 }
 
-void display_map(t_game *game)
+void	display_map(t_game *game)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;

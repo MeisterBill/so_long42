@@ -1,9 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_mappath.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: artvan-d <artvan-d@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/23 14:00:59 by artvan-d          #+#    #+#             */
+/*   Updated: 2023/02/23 14:04:50 by artvan-d         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../Includes/so_long.h"
 
-static void free_map(char **map)
+static void	free_map(char **map)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (map[i])
@@ -14,9 +25,9 @@ static void free_map(char **map)
 	free(map);
 }
 
-int check_adjacent(t_game *game, int x, int y)
+int	check_adjacent(t_game *game, int x, int y)
 {
-	char **map;
+	char	**map;
 
 	map = game->map_data;
 	if (map[y][x] == 'P' || map[y][x] == 'E' || map[y][x] == 'C')
@@ -26,13 +37,13 @@ int check_adjacent(t_game *game, int x, int y)
 	return (0);
 }
 
-void recursive_check(t_game *game, int x, int y)
+void	recursive_check(t_game *game, int x, int y)
 {
-	char **map;
+	char	**map;
 
 	map = game->map_data;
 	if (map[y][x] == '1' || map[y][x] == 'B')
-		return;
+		return ;
 	check_adjacent(game, x, y);
 	recursive_check(game, x, y - 1);
 	recursive_check(game, x + 1, y);
@@ -40,7 +51,7 @@ void recursive_check(t_game *game, int x, int y)
 	recursive_check(game, x - 1, y);
 }
 
-void check_amount(t_game *game, int i, int j)
+void	check_amount(t_game *game, int i, int j)
 {
 	if (game->count != game->coins + 2)
 	{
@@ -49,11 +60,11 @@ void check_amount(t_game *game, int i, int j)
 	}
 }
 
-void check_valid_path(t_game *game)
+void	check_valid_path(t_game *game)
 {
-	char **map;
-	int i;
-	int j;
+	char	**map;
+	int		i;
+	int		j;
 
 	map = game->map_data;
 	i = 0;
@@ -75,26 +86,4 @@ void check_valid_path(t_game *game)
 	}
 	free_map(game->map_data);
 	load_map(game, game->file);
-}
-
-int count_coins(char **map)
-{
-	int i;
-	int j;
-	int coins;
-
-	coins = 0;
-	i = 0;
-	while (map[i])
-	{
-		j = 0;
-		while (map[i][j])
-		{
-			if (map[i][j] == 'C')
-				coins++;
-			j++;
-		}
-		i++;
-	}
-	return (coins);
 }

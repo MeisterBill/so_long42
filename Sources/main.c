@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: artvan-d <artvan-d@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/23 14:07:06 by artvan-d          #+#    #+#             */
+/*   Updated: 2023/02/23 14:07:34 by artvan-d         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../Includes/so_long.h"
 
-void init_run_game(t_game *game, char **argv)
+void	init_run_game(t_game *game, char **argv)
 {
 	game->file = argv[1];
 	game->item_player = 0;
@@ -11,7 +22,7 @@ void init_run_game(t_game *game, char **argv)
 	check_valid_path(game);
 	game->mlx = mlx_init();
 	game->mlx_win = mlx_new_window(game->mlx, game->map_width * SPRITE,
-																game->map_height * SPRITE, "so_long");
+			game->map_height * SPRITE, "so_long");
 	load_img(game);
 	display_map(game);
 	mlx_key_hook(game->mlx_win, key_hook, game);

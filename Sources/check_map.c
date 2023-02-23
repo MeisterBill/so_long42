@@ -1,18 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_map.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: artvan-d <artvan-d@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/23 14:00:24 by artvan-d          #+#    #+#             */
+/*   Updated: 2023/02/23 14:03:39 by artvan-d         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../Includes/so_long.h"
 
-int check_if_all_collected(t_game *game)
+int	check_if_all_collected(t_game *game)
 {
 	if (game->item_player == game->item_count)
 		return (1);
 	return (0);
 }
 
-int check_map_rectangular(t_game *game)
+int	check_map_rectangular(t_game *game)
 {
-	int line_lenght;
-	int i;
-	int j;
+	int	line_lenght;
+	int	i;
+	int	j;
 
 	line_lenght = game->map_width;
 	i = 1;
@@ -32,9 +43,9 @@ int check_map_rectangular(t_game *game)
 	return (1);
 }
 
-int check_map_borders(t_game *game)
+int	check_map_borders(t_game *game)
 {
-	int i;
+	int	i;
 
 	i = game->map_width;
 	while (i--)
@@ -49,12 +60,12 @@ int check_map_borders(t_game *game)
 	return (1);
 }
 
-int check_map_elements(t_game *game)
+int	check_map_elements(t_game *game)
 {
-	int player;
-	int exit;
-	int i;
-	int j;
+	int	player;
+	int	exit;
+	int	i;
+	int	j;
 
 	player = 0;
 	exit = 0;
