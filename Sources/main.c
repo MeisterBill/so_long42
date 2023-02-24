@@ -60,7 +60,6 @@ int	close_window(t_game *game)
 		}
 		free(game->map_data);
 	}
-	system("leaks so_long");
 	exit(0);
 }
 
