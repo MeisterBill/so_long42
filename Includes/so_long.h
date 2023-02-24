@@ -62,6 +62,8 @@ void	get_player_position(t_game *game);
 int		key_hook(int key, t_game *game);
 void	key_process(int key, t_game *game);
 void	move(t_game *game, int move_x, int move_y);
+void	move_help(t_game *game, int move_x, int move_y, char next_pos, char last_pos);
+void	move_exit(t_game *game, char next_pos);
 void	get_item_number(t_game *game);
 int		check_if_all_collected(t_game *game);
 int		check_map(t_game *game);
