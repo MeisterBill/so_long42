@@ -6,7 +6,7 @@
 /*   By: artvan-d <artvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:58:14 by artvan-d          #+#    #+#             */
-/*   Updated: 2023/02/23 15:07:12 by artvan-d         ###   ########.fr       */
+/*   Updated: 2023/02/24 13:49:21 by artvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,12 @@ typedef struct s_game
 	char	*file;
 }				t_game;
 
+typedef struct s_pos
+{
+	char	next_pos;
+	char	last_pos;
+}				t_pos;
+
 void	init_run_game(t_game *game, char **argv);
 int		check_argv(t_game *game, int argc, char **argv);
 void	put_img(t_game *game, int x, int y, void *img);
@@ -62,7 +68,7 @@ void	get_player_position(t_game *game);
 int		key_hook(int key, t_game *game);
 void	key_process(int key, t_game *game);
 void	move(t_game *game, int move_x, int move_y);
-void	move_help(t_game *game, int move_x, int move_y, char next_pos, char last_pos);
+void	move_help(t_game *game, int move_x, int move_y, t_pos pos);
 void	move_exit(t_game *game, char next_pos);
 void	get_item_number(t_game *game);
 int		check_if_all_collected(t_game *game);
