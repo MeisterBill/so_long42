@@ -6,7 +6,7 @@
 /*   By: artvan-d <artvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 13:42:45 by artvan-d          #+#    #+#             */
-/*   Updated: 2023/02/24 13:53:13 by artvan-d         ###   ########.fr       */
+/*   Updated: 2023/02/27 16:57:23 by artvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,29 @@ void	move_help(t_game *game, int move_x, int move_y, t_pos pos)
 		game->item_player++;
 		game->map_data[game->player_y + move_y][game->player_x + move_x] = '0';
 	}
+}
+
+int	check_unknownchar(t_game *game)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (game->map_data[i])
+	{
+		while (game->map_data[i][j])
+		{
+			if (game->map_data[i][j] != 'P' && game->map_data[i][j] != 'E' \
+			&& game->map_data[i][j] != '1' && game->map_data[i][j] != 'C' \
+			&& game->map_data[i][j] != '0' && game->map_data[i][j] != '\n')
+			{
+				return (0);
+			}
+			j++;
+		}
+		i++;
+		j = 0;
+	}
+	return (1);
 }

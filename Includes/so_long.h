@@ -6,7 +6,7 @@
 /*   By: artvan-d <artvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 13:58:14 by artvan-d          #+#    #+#             */
-/*   Updated: 2023/02/24 13:49:21 by artvan-d         ###   ########.fr       */
+/*   Updated: 2023/02/27 17:01:03 by artvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,6 @@ int		check_map_borders(t_game *game);
 int		close_window(t_game *game);
 int		count_coins(char **map);
 void	check_valid_path(t_game *game);
+int		check_unknownchar(t_game *game);
 
 #endif

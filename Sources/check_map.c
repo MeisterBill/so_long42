@@ -6,7 +6,7 @@
 /*   By: artvan-d <artvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 14:00:24 by artvan-d          #+#    #+#             */
-/*   Updated: 2023/02/23 16:19:18 by artvan-d         ###   ########.fr       */
+/*   Updated: 2023/02/27 17:00:16 by artvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,11 @@ int	check_map(t_game *game)
 	{
 		write(1, "Error\nMap must contain ONE player, ", 36);
 		write(1, "ONE exit, and at least ONE item.\n", 34);
+		return (0);
+	}
+	if (!check_unknownchar(game))
+	{
+		write(1, "Error\nUse only : 1, 0, C, P and E to build your map.\n", 54);
 		return (0);
 	}
 	return (1);
