@@ -6,7 +6,7 @@
 /*   By: artvan-d <artvan-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 15:36:49 by artvan-d          #+#    #+#             */
-/*   Updated: 2022/12/15 14:04:02 by artvan-d         ###   ########.fr       */
+/*   Updated: 2023/03/09 13:09:16 by artvan-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <stdlib.h>
 # include <stdarg.h>
 # include "limits.h"
-
 
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t nelem, size_t elsize);
